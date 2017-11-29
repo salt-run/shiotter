@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shiotter</title>
+    <%= csrf_meta_tags %>
+    
+    <!-- スマホのようなサイズのものにもきちんとデザインが反映されるようになります。 -->
+    <meta name="viewport" content="width=device-width">
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="cont">
+      
+     <nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+             <span class="sr-only">Shiotter</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=<%= tweets_path %>>Shiotter</a>
+          </div>
+          <div id="gnavi" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href=<%= tweets_path %>><span class="glyphicon glyphicon-home">ホーム</a></li>
+              <li><a href=""><span class="glyphicon glyphicon-star-empty">モーメント</span></a></li>
+              <li><a href=""><span class="glyphicon glyphicon-bell">通知</span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-envelope">メッセージ</span></a></li>
+              <li><a href=<%= new_tweet_path %>><span class="glyphicon glyphicon-book">ツイート</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <%= yield %>
+
+      <footer class="footer">
+        <p>© 2015-2016 Copyright Shiotter</p>
+      </footer>
+    </div>
+  </body>
+  
+</html>

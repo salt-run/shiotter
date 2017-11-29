@@ -1,0 +1,36 @@
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="my_profile">
+          <h3>ユーザ名</h3>
+          <p>@user_id</p>
+          <p><span class="glyphicon glyphicon-list-alt">2017年8月に登録</span></p>
+        </div>
+        <div class="recommended">
+          <h4>おすすめトレンド</h4>
+          <h6>#いい肉の日</h6>
+          <h6>重大バグ</h6>
+        </div>
+     </div>
+     
+      <div class="col-md-8">
+        <% @tweets.each do |tweet| %>
+          <div  class="tweet_area">
+            <tr>
+              <td><%= tweet.content %></td>
+              <br>
+              <td><%= link_to 'edit', edit_tweet_path(tweet.id) %></td>
+              <td><%= link_to 'delete', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+            <!--
+            <td><%#= link_to '詳細を確認する', blog_path(blog.id) %></td>
+            <td><%#= link_to 'ブログを編集する', edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %></td>
+            -->
+            </tr>
+          </div>  
+        <% end %>
+    </div>
+  </div>
+</div>
+
+  
